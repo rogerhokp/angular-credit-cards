@@ -96,9 +96,9 @@ exports.year = function ccExpYear () {
 
         ccExp.setYear(ngModel)
 
-        ngModel.$parsers.unshift(ap.partialRight(year.parse, !fullYear))
+        ngModel.$parsers.push(ap.partialRight(year.parse, !fullYear))
 
-        ngModel.$formatters.unshift(function formatExpYear (value) {
+        ngModel.$formatters.push(function formatExpYear (value) {
           return value ? year.format(value, !fullYear) : ''
         })
 
